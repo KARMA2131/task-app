@@ -167,7 +167,7 @@ themeSelect.addEventListener('change', onThemeSelect)
 
     const complatedButton = document.createElement('button');
     complatedButton.classList.add('complated-task-button');
-    complatedButton.textContent = '✓ Completed';
+    complatedButton.textContent = 'Completed ✓';
     complatedButton.style.cssText =`
       display: flex;
       height: 35px;
@@ -252,13 +252,13 @@ const newTask = {
 
 function onThemeSelect(e) {
   const selectedTheme = themeSelect.value;
-  const isConfirmed = confirm(
-    `Вы действительно хотите изменить тему: ${selectedTheme}`,
-  );
-  if (!isConfirmed) {
-    themeSelect.value = lastSelectedTheme;
-    return;
-  }
+  // const isConfirmed = confirm(
+  //   `Вы действительно хотите изменить тему: ${selectedTheme}`,
+  // );
+  // if (!isConfirmed) {
+  //   themeSelect.value = lastSelectedTheme;
+  //   return;
+  // }
   setTheme(selectedTheme);
   lastSelectedTheme = selectedTheme;
   localStorage.setItem('app_theme', selectedTheme);
